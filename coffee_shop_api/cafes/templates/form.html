@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{{ url_for('api_views.add_cafe')}}" method="post">
+    <div class="form-group add-cafe">
+      <label>Shop Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Coffee Shop Name">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="map_url" placeholder="map url">
+      <input type="text" class="form-control" name="img_url" placeholder="img url">
+      <input type="text" class="form-control" name="location" placeholder="location">
+      <input type="text" class="form-control" name="seats" placeholder="seats">
+      <input type="text" class="form-control" name="has_toilet" placeholder="bathroom">
+      <input type="text" class="form-control" name="has_wifi" placeholder="has wifi?">
+      <input type="text" class="form-control" name="has_sockets" placeholder="power outlet?">
+      <input type="text" class="form-control" name="can_take_calls" placeholder="use phone?">
+      <input type="text" class="form-control" name="coffee_price" placeholder="coffee_price">
+      <input type="hidden" name="from_web" placeholder="True" value="True">
+
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  <br>
+  <h2>Delete Cafe </h2>
+
+  <form action="{{ url_for('views.delete_cafe') }}" method="post">
+    <div class="form-group">
+      <input type="text" class="form-control" name="cafe_name" placeholder="Cafe Name">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+{% endblock %}
