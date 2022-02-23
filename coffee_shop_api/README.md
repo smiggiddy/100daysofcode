@@ -2,7 +2,7 @@
 
 Simple coffee shop finder web app, also has an API backend, and ability to add / remove cafes using the API.
 
-Project also has a docker file. 
+Also included Dockerfile if you'd like to make changes
 
 ![](coffee_shop_project.png)
 
@@ -16,22 +16,11 @@ Improvements needed
 - Improve API backend
 
 
+## Run from Docker image on docker hub
 ```
-# Docker File
+# Docker 
+docker run -d -p 5000:5000 smiggiddy/coffee-app
 
-FROM python:alpine3.15
-
-RUN pip install flask requests flask_sqlalchemy
-
-COPY . /app
-
-EXPOSE 5000
-
-WORKDIR /app
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "coffee_shop_api/main.py" ]
 ```
 
 ## Sample API Response 
