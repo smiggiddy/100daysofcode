@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+
+<div class="container">
+{% block content %}
+
+<h1 class="intro-heading">Simple To-Do list</h1>
+<h2>Make a dump list, Pick the most important tasks, Then do them!</h2>
+
+
+<a href="{{ url_for('views.note', note_id=note_id)}}" role="button" class="btn btn-success get-started-btn">Create Your List</a>
+
+<p>No sign up necessary</p>
+
+{% endblock %}
+</div>
+
+{% include 'footer.html' %}

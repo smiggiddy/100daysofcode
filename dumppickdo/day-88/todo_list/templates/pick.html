@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 align="center">Most important tasks! </h1>
+
+
+
+
+{% for item in picked_tasks %}
+<form action="{{ url_for('views.completed_task', note_id=note_id, task_id=item.id ) }}" method="POST">
+<ul class="list-group list-group-flush">
+
+  <label class="list-group-item">
+    
+    {% if item.completed == None %}
+    <input onChange="this.form.submit()" class="form-check-input me-1" type="checkbox" value="{{ item.id }}" aria-label="Checkbox for following text input" name="todo">
+    {{ item.list_item_name }} 
+    {% elif item.completed == 1 %}
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="Checkbox for following text input" name="complete" checked>
+    <s>{{ item.list_item_name }} </s>
+    {% endif %}
+     
+
+
+    <button type="button" class="btn-close pull-right" onClick="deleteNote( {{ item.id }} , '{{ note_id }}' )" data-dismiss="modal">
+    {# <span aria-hidden="true">&times;</span> #}
+    </button>
+  </label>
+
+    {% endfor %}
+    </ul>
+</form>
+
+
+{% endblock %}
+
+
+

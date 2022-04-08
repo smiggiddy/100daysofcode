@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}{{ note_id }}{% endblock %}
+
+
+{% block content %}
+<h1 align="center">Make the dump list</h1>
+
+<!-- Flash Error Messages -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+
+<form method="POST">
+  <input name="todo" id="note" class="form-control" autofocus></input>
+  <br />
+</form>
+
+<form action="{{ url_for('views.pick', note_id=note_id) }}" method="POST">
+<ul class="list-group list-group-flush">
+{% for item in todo_list[::-1] %}
+<label class="list-group-item">
+  <input type="checkbox"  value="{{ item }}" name='item' class="form-check-input me-1" id="{{ loop.index}}-item">{{ item }}</label>
+
+
+
+
+{% endfor %}
+</ul>
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Done</button>
+  </div>
+</form>
+
+{% endblock %}
+
