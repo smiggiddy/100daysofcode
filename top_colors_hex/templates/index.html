@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Common Hex</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;"> Upload a image </h1>
+
+    <form action="{{ url_for('home')}}" method="post" style="text-align: center;" enctype=multipart/form-data>
+        <input type="file" name="file" accept="image/png, image/jpeg, image/jpg">
+        <button type="submit">Get Hex Codes</button>
+    </form>
+    
+</body>
+</html>
