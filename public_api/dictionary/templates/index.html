@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+
+    <form action="" method="post">
+        <label>Enter a word</label>
+        <input type="text" name="word" id="" placeholder="Enter a word">
+        <button type="submit">Submit</button>
+
+    </form>
+    {% if definition %}
+    <br>
+    <br>
+    <h1>Entered Word: {{ definition['word'] }}</h1>
+    <p>
+        Definition: {{ definition['definitions'][0]['definition'] }}
+
+    </p>
+
+    <h1>JSON DATA</h1>
+    {{ json_data }}
+
+    {% endif %}
+</body>
+</html>
