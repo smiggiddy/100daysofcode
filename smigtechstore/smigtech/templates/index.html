@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center"> Smig Tech Services: </h1>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- Column -->
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Private Consulting</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Tech Services</h6>
+              <p class="card-text">Cloud engineering and DevOps consulting</p>
+              <form method="post" action="{{ url_for('views.book_session')}}" class="inline">
+                <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+                <button type="submit" name="submit_param" value="submit_value" class="link-button">
+                  Book now!
+                </button>
+              </form>
+              <a href="#" class="card-link">Tech Blog</a>
+            </div>
+          </div>
+    </div>
+      <div class="col">
+        <!-- Column -->
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
